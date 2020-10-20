@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %} {% block 'head' %}
+<title>Add Recipe</title>
+{% endblock %} {% block 'body' %}
+<h1>Add a new recipe</h1>
+<form action="addrecipe" method="POST">
+  {% csrf_token %}
+  <div class="form-row">
+    <label for="name">name </label>
+    <input name="name" id="name" />
+  </div>
+  <div class="form-row">
+    <label for="ingredients">ingredients </label>
+    <textarea name="ingredients" id="ingredients" rows="8"></textarea>
+  </div>
+  <div class="form-row">
+    <label for="directions">directions </label>
+    <textarea name="directions" id="directions" rows="8"></textarea>
+  </div>
+  <input type="submit" value="Add" />
+</form>
+{% endblock %}

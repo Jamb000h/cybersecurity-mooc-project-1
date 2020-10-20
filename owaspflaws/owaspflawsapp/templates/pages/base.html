@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% block 'head' %} {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    {% include "pages/nav.html" %}
+    <div id="wrapper">{% block 'body' %} {% endblock %}</div>
+  </body>
+</html>

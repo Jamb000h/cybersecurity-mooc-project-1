@@ -1,0 +1,17 @@
+{% extends 'pages/base.html' %} {% block 'head' %}
+<title>Add User</title>
+{% endblock %} {% block 'body' %}
+<h1>Add a new user</h1>
+<form action="adduser" method="POST">
+  {% csrf_token %}
+  <div class="form-row">
+    <label for="username">username </label>
+    <input name="username" id="username" />
+  </div>
+  <div class="form-row">
+    <label for="password">password </label>
+    <input name="password" id="password" />
+  </div>
+  <input type="submit" value="Add" />
+</form>
+{% endblock %}

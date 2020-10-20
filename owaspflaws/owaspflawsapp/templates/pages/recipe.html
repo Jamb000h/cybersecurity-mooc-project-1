@@ -1,0 +1,31 @@
+{% extends 'pages/base.html' %} {% block 'head' %}
+<title>{{recipe.name}}</title>
+{% endblock %} {% block 'body' %}
+<h1>{{recipe.name}}</h1>
+{% if canedit %}
+<a href="/editrecipe?recipeid={{recipe.id}}">Edit recipe</a>
+{% endif %}
+<h2>Ingredients</h2>
+<p>{{recipe.ingredients}}</p>
+<h2>Directions</h2>
+<p>{{recipe.directions}}</p>
+
+<h2>Comments</h2>
+<div id="comments">
+  {% for comment in comments %}
+  <ul class="comment">
+    <li>
+      <strong>{{comment.user.username}}</strong>: {{comment.message|safe}}
+    </li>
+  </ul>
+  {% endfor %}
+</div>
+
+<h2>Leave a comment</h2>
+<form action="/comment">
+  {% csrf_token %}
+  <input name="recipeid" style="display: none" value="{{recipe.id}}" />
+  <textarea name="message"></textarea>
+  <input type="submit" value="Send" />
+</form>
+{% endblock %}

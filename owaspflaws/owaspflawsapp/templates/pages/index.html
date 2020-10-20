@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %} {% block 'head' %}
+<title>Recipes</title>
+{% endblock %} {% block 'body' %}
+<h1>Recipes</h1>
+<div class="wrapper--row">
+  <ul>
+    {% for recipe in recipes %}
+
+    <li><a href="/recipe?recipeid={{recipe.id}}">{{recipe.name}}</a></li>
+    {% endfor %}
+  </ul>
+  <form>
+    <div class="form-row">
+      <label for="name">Filter by name </label>
+      <input name="name" id="name" value="{{filter}}" />
+    </div>
+    <input type="submit" value="filter" />
+  </form>
+</div>
+
+{% endblock %}

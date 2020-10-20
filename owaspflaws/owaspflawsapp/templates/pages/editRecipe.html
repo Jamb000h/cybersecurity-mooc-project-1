@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %} {% block 'head' %}
+<title>Edit {{recipe.name}}</title>
+{% endblock %} {% block 'body' %}
+<h1>Edit {{recipe.name}}</h1>
+<form action="editrecipe" method="POST">
+  {% csrf_token %}
+  <input name="recipeid" style="display: none" value="{{recipe.id}}" />
+  <input name="canedit" style="display: none" value="{{canedit}}" />
+  <div class="form-row">
+    <label for="name">name </label>
+    <input name="name" id="name" value="{{recipe.name}}" />
+  </div>
+  <div class="form-row">
+    <label for="ingredients">ingredients </label>
+    <textarea name="ingredients" id="ingredients" rows="8">
+{{recipe.ingredients}}
+</textarea
+    >
+  </div>
+  <div class="form-row">
+    <label for="directions">directions </label>
+    <textarea name="directions" id="directions" rows="8">
+{{recipe.directions}}</textarea
+    >
+  </div>
+  <input type="submit" value="Edit" />
+</form>
+{% endblock %}

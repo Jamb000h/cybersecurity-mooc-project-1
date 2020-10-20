@@ -1,0 +1,23 @@
+{% if request.user.is_authenticated %}
+<nav>
+  <div class="wrapper--row">
+    <div class="service-name">
+      <span>Le Recipe Service</span>
+    </div>
+    <ul>
+      <li><a href="/">HOME</a></li>
+      <li>
+        <a href="/addrecipe">Add a new recipe</a>
+      </li>
+      {% if request.user.is_superuser %}
+      <li>
+        <a href="/adduser">Add a new user</a>
+      </li>
+      {% endif %}
+      <li>
+        <a href="/logout">Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endif %}

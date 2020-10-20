@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background-color: lightgrey;
+}
+
+body,
+#wrapper,
+form,
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+#wrapper {
+  width: 40rem;
+  background-color: white;
+  padding: 2rem;
+}
+
+#wrapper > * {
+  width: 100%;
+}
+
+.wrapper--row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.wrapper--row > * {
+  display: inline-flex;
+}
+
+ul {
+  list-style: none;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  background-color: white;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+nav ul {
+  flex-direction: row;
+  align-items: center;
+  height: 5rem;
+}
+
+nav ul li {
+  text-transform: uppercase;
+}
+
+nav ul li:not(:last-child) {
+  margin: 0 1rem 0 0;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+nav ul li a:hover {
+  background-color: lightgrey;
+}
+
+.service-name {
+  font-size: 1rem;
+  align-items: center;
+}
+
+.form-row:not(:first-of-type) {
+  margin: 1rem 0 0;
+}
+
+[type="submit"] {
+  margin: 0.5rem 0 0;
+}
+
+p {
+  white-space: pre-wrap;
+}
+
+#wrapper ul li {
+  margin: 0 0 1rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h2 {
+  margin: 1.5rem 0 1rem;
+}
+
+#login-form {
+  display: flex;
+  align-items: center;
+}
+
+#login-form > * {
+  width: 20rem;
+}
+
+#login-form p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
